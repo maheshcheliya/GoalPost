@@ -28,7 +28,9 @@ class CreateGoalVC: UIViewController {
         shortTermBtn.setSelectedColor()
         longTermBtn.setDeselectedColor()
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.goalTextView.resignFirstResponder()
+    }
     @IBAction func shortTermBtnWasPressed(_ sender: Any) {
         goalType = .shortTerm
         shortTermBtn.setSelectedColor()

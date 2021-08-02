@@ -23,9 +23,10 @@ class FinishGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createGoalBtn.bindToKeyboard()
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.pointsTextField.resignFirstResponder()
+    }
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
 //        pass data into core data Goal model
         if pointsTextField.text != nil  {
